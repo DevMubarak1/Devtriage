@@ -1,6 +1,6 @@
 # Devtriage
 
-![Tests](https://github.com/DevMubarak1/Devtriage/actions/workflows/test.yml/badge.svg)
+![Tests](https://github.com/DevMubarak1/Devtriage/actions/workflows/test.yml/badge.svg) [![PyPI version](https://badge.fury.io/py/devtriage.svg)](https://badge.fury.io/py/devtriage)
 
 `Devtriage` is a lightweight CLI that turns a failing command into a reproducible bug report. It captures stdout/stderr, environment data, git context, and produces shareable snapshots or issue templates so teammates can reproduce failures quickly.
 
@@ -66,12 +66,7 @@ devtriage issue --cmd "pytest tests/test_widget.py::test_happy_path -q" --title 
 4. Run `devtriage --help` to validate the CLI locally.
 5. Open pull requests with a clear description plus tests/recordings when relevant.
 
-## Releasing
-1. Ensure `pyproject.toml` and `src/devtriage/__init__.py` share the same version (currently 0.1.0) and commit your changes.
-2. Run `pytest` locally and confirm CI is green.
-3. Build artifacts with `python -m pip install --upgrade build twine` followed by `python -m build`.
-4. Upload to TestPyPI or PyPI via `python -m twine upload dist/*`.
-5. Tag the release (`git tag v<version>; git push origin v<version>`) and create a GitHub release in [DevMubarak1/Devtriage](https://github.com/DevMubarak1/Devtriage).
+[DevMubarak1/Devtriage](https://github.com/DevMubarak1/Devtriage).
 
 ## License
 MIT © 2025 devtriage contributors

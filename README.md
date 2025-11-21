@@ -47,7 +47,7 @@ This writes `env.json` plus a timestamped `devtriage_snapshot_*.zip` with everyt
 ```
 devtriage issue --cmd "pytest tests/test_widget.py::test_happy_path -q" --title "Widget test regression" --out ./triage/widget_fail
 ```
-`ISSUE.md` summarizes the failure, environment, and includes the snapshot path; paste it into GitHub/GitLab.
+`ISSUE.md` summarizes the failure, environment, and includes the snapshot path. You can paste it into GitHub/GitLab, or use `--gh` to automatically open a GitHub issue via the GitHub CLI.
 
 ### Focused test runs
 - Auto-detect: `devtriage focus --auto`

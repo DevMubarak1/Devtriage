@@ -9,7 +9,7 @@ description = "CLI for reproducing, capturing, and reporting failing test runs."
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [{ name = "devtriage contributors" }]
-license = { file = "LICENSE" }
+license = "MIT"
 dependencies = []
 keywords = ["triage", "cli", "testing", "pytest", "bug report"]
 

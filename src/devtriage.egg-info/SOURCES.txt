@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/devtriage/__init__.py
+src/devtriage/capture.py
+src/devtriage/cli.py
+src/devtriage/runners.py
+src/devtriage.egg-info/PKG-INFO
+src/devtriage.egg-info/SOURCES.txt
+src/devtriage.egg-info/dependency_links.txt
+src/devtriage.egg-info/entry_points.txt
+src/devtriage.egg-info/requires.txt
+src/devtriage.egg-info/top_level.txt
+tests/test_runner_detection.py
+tests/test_sanitization.py

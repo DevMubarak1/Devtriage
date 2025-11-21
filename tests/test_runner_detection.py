@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-import devtriage
+from devtriage.runners import detect_test_runner
 
 
 def write_package(tmp_path, dependencies=None, scripts=None):
@@ -20,7 +20,7 @@ def write_package(tmp_path, dependencies=None, scripts=None):
 def test_detect_runner_defaults_to_pytest(tmp_path, monkeypatch):
     (tmp_path / "pytest.ini").write_text("[pytest]\n")
     monkeypatch.chdir(tmp_path)
-    assert devtriage.detect_test_runner() == "pytest"
+    assert detect_test_runner() == "pytest"
 
 
 @pytest.mark.parametrize(
@@ -35,11 +35,11 @@ def test_detect_runner_defaults_to_pytest(tmp_path, monkeypatch):
 def test_detect_runner_with_js_configs(tmp_path, monkeypatch, deps, scripts, expected):
     write_package(tmp_path, dependencies=deps, scripts=scripts)
     monkeypatch.chdir(tmp_path)
-    assert devtriage.detect_test_runner() == expected
+    assert detect_test_runner() == expected
 
 
 def test_detect_runner_nose_ini(tmp_path, monkeypatch):
     (tmp_path / "setup.cfg").write_text("[nosetests]\nverbosity=2\n")
     monkeypatch.chdir(tmp_path)
-    assert devtriage.detect_test_runner() == "nose"
+    assert detect_test_runner() == "nose"
 

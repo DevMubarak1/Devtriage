@@ -1,8 +1,46 @@
-# Devtriage
+Metadata-Version: 2.4
+Name: devtriage
+Version: 0.3.0
+Summary: CLI for reproducing, capturing, and reporting failing test runs.
+Author: devtriage contributors
+License: MIT License
+        
+        Copyright (c) 2025 devtriage contributors
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+        
+Project-URL: Homepage, https://github.com/DevMubarak1/Devtriage
+Project-URL: Issue Tracker, https://github.com/DevMubarak1/Devtriage/issues
+Keywords: triage,cli,testing,pytest,bug report
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Dynamic: license-file
+
+# devtriage
 
 ![Tests](https://github.com/DevMubarak1/Devtriage/actions/workflows/test.yml/badge.svg)
 
-`Devtriage` is a lightweight CLI that turns a failing command into a reproducible bug report. It captures stdout/stderr, environment data, git context, and produces shareable snapshots or issue templates so teammates can reproduce failures quickly.
+`devtriage` is a lightweight CLI that turns a failing command into a reproducible bug report. It captures stdout/stderr, environment data, git context, and produces shareable snapshots or issue templates so teammates can reproduce failures quickly.
 
 ## Features
 - `run`: execute any command and capture stdout/stderr plus exit metadata.
@@ -13,7 +51,7 @@
 - Visual proof: screenshot of the CLI flow.
 
 ```
-Devtriage/
+devtriage/
 ├── src/devtriage
 │   ├── __init__.py
 │   ├── cli.py        # argparse + entrypoint
@@ -67,11 +105,7 @@ devtriage issue --cmd "pytest tests/test_widget.py::test_happy_path -q" --title 
 5. Open pull requests with a clear description plus tests/recordings when relevant.
 
 ## Releasing
-1. Ensure `pyproject.toml` and `src/devtriage/__init__.py` share the same version (currently 0.1.0) and commit your changes.
-2. Run `pytest` locally and confirm CI is green.
-3. Build artifacts with `python -m pip install --upgrade build twine` followed by `python -m build`.
-4. Upload to TestPyPI or PyPI via `python -m twine upload dist/*`.
-5. Tag the release (`git tag v<version>; git push origin v<version>`) and create a GitHub release in [DevMubarak1/Devtriage](https://github.com/DevMubarak1/Devtriage).
+See `RELEASING.md` for the PyPI workflow (build via `python -m build` and upload with `twine`). The canonical repository is [DevMubarak1/Devtriage](https://github.com/DevMubarak1/Devtriage).
 
 ## License
 MIT © 2025 devtriage contributors

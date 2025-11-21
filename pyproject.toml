@@ -17,12 +17,18 @@ keywords = ["triage", "cli", "testing", "pytest", "bug report"]
 dev = ["pytest>=8"]
 
 [tool.setuptools]
-py-modules = ["devtriage"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [project.urls]
 Homepage = "https://github.com/DevMubarak1/Devtriage"
 "Issue Tracker" = "https://github.com/DevMubarak1/Devtriage/issues"
 
 [project.scripts]
-devtriage = "devtriage:main"
+devtriage = "devtriage.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
 
